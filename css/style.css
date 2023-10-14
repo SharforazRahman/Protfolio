@@ -289,7 +289,7 @@ span{
     background: var(--second-bg-color);
 }
 
-.education{
+.education, .Projects{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -298,31 +298,32 @@ span{
     padding-bottom: 5rem;
 }
 
-.education .education-row{
+.education .education-row, .Projects .Projects-row{
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
 }
 
-.education-row .education-column{
+.education-row .education-column, .Projects-row .Projects-column{
     flex: 1 1 40rem;
 }
 
-.education-column .title{
+.education-column .title, .Projects-column .title{
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
 }
 
-.education-column .education-box{
+.education-column .education-box, .Projects-column .Projects-box{
     border-left: .2rem solid var(--main-color);
 }
 
-.education-box .education-content{
+.education-box .education-content, .Projects-box .Projects-content{
     position: relative;
     padding: 2rem;
 }
 
-.education-box .education-content::before{
+.education-box .education-content::before,
+.Projects-box .Projects-content::before{
     content: '';
     position: absolute;
     top: 1;
@@ -333,7 +334,7 @@ span{
     border-radius: 50%;
 }
 
-.education-content .content{
+.education-content .content, .Projects-content .content{
     position: relative;
     padding: 1.5rem;
     border: .2rem solid var(--main-color);
@@ -342,7 +343,7 @@ span{
     overflow: hidden;
 }
 
-.education-box .content::before{
+.education-box .content::before, .Projects-box .content::before{
     content: '';
     position: absolute;
     height: 100%;
@@ -355,24 +356,28 @@ span{
 }
 
 
-.education-content .content:hover::before{
+.education-content .content:hover::before,.Projects-content .content:hover::before{
     width: 100%;
 }
-.education-content .content .year{
+.education-content .content .year,
+.Projects-content .content .year{
     font-size: 1.5rem;
     color: var(--main-color);
     padding-bottom: .5rem;
 }
 
-.education-content .content .year i{
+.education-content .content .year i,
+.Projects-content .content .year i{
     padding-right: .5rem;
 }
 
-.education-content .content h3{
+.education-content .content h3,
+.Projects-content .content h3{
     font-size: 2rem;
 }
 
-.education-content .content p{
+.education-content .content p,
+.Projects-content .content p{
     font-size: 1.7rem;
     padding-top: .5rem;
 }
@@ -385,12 +390,12 @@ span{
 .code{
     text-decoration: none;
     color: white;
+    padding: 10px;
 }
 
 .code img{
-    width: 40px;
+    width: 20px;
 }
-
 
 .skills{
     min-height: auto;
@@ -417,7 +422,26 @@ span{
     position: relative;
     border: .2rem solid var(--main-color);
     border-radius: .6rem;
+    z-index: 1;
     padding: .5rem 1.5rem;
+    overflow: hidden;
+}
+
+.skills-box .skills-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .3s;
+
+}
+
+.skills-box .skills-content:hover::before{
+    width: 100%;
 }
 
 .skills-content .progress{
@@ -428,4 +452,185 @@ span{
     font-size: 1.7rem;
     display: flex;
     justify-content: space-between;
+}
+
+.skills-content .progress h3 span{
+    color: var(--text-color);
+}
+
+.skills-content .progress .bar{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.skills-content .progress .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
+    width: 70%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
+    width: 80%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
+    width: 70%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span{
+    width: 85%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(7) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(8) .bar span{
+    width: 80%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(9) .bar span{
+    width: 85%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(10) .bar span{
+    width: 50%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(11) .bar span{
+    width: 85%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(12) .bar span{
+    width: 75%;
+}
+
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
+    width: 70%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
+    width: 80%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span{
+    width: 95%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span{
+    width: 95%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(7) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(8) .bar span{
+    width: 95%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(9) .bar span{
+    width: 100%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(10) .bar span{
+    width: 100%;
+}
+
+.contact{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field{
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea{
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+    color: var(--text-color);
+}
+
+.contact form .focus{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: var(--second-bg-color);
+    border-radius: .6rem;
+    transition: .4s;
+    z-index: -1;
+
+}
+
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,.contact form .textarea-field textarea:focus~.focus,.contact form .textarea-field textarea:valid~.focus{
+    width: 100%;
+}
+
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem ;
+    display: flex;
+}
+
+.contact form .textarea-field textarea{
+    resize: none;
+}
+
+.contact form .btn-box.btns .btn{
+    cursor: pointer;
 }
